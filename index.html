@@ -46,21 +46,11 @@
     align-items: center;
 }
 
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
-    max-height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
+nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
 
 /* Menu Toggle Button */
 .menu-toggle {
@@ -457,11 +447,6 @@
     <!-- Navigation -->
     <nav class="navbar">
     <div class="container">
-        <div class="logo">
-            <a href="#hero" aria-label="Home">
-                <img src="logo.png" alt="Aninda Roy Dhruba Logo" class="logo-img">
-            </a>
-        </div>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>

@@ -118,18 +118,6 @@
     margin-top:.5rem;
     max-width:520px;
   }
-  header.top .aside-note{
-    font-family:'Caveat', cursive;
-    font-size:1.35rem;
-    color:var(--coral);
-    position:absolute;
-    top:2.2rem; right:2rem;
-    transform:rotate(-4deg);
-    text-align:right;
-    line-height:1.25;
-  }
-  header.top .aside-note svg{ display:block; margin:.2rem 0 0 auto; }
-  @media (max-width:760px){ header.top .aside-note{ display:none; } }
 
   /* ============ LAYOUT ============ */
   .layout{
@@ -181,7 +169,8 @@
   .contact-block h2{ font-size:1.25rem; }
   .contact-block .dept{ font-size:.85rem; color:var(--muted); margin-top:.15rem; }
   .contact-block ul{ list-style:none; margin-top:1rem; font-size:.9rem; }
-  .contact-block li{ padding:.25rem 0; }
+  .contact-block li{ padding:.25rem 0; display:flex; align-items:center; justify-content:center; gap:.5rem; }
+  .contact-block .ico{ color:var(--teal); flex-shrink:0; }
 
   .btn-cv{
     display:block; text-align:center;
@@ -265,7 +254,6 @@
   .t-row .what h3{ font-size:1.08rem; }
   .t-row .what .where{ font-size:.85rem; color:var(--muted); margin-top:.15rem; }
   .t-row .num{ white-space:nowrap; font-weight:600; color:var(--teal-dark); font-size:.95rem; }
-  .t-note{ font-size:.88rem; color:var(--muted); margin-top:1rem; max-width:640px; }
 
   /* Experience: light cards, slight rotation variance */
   .job{
@@ -418,10 +406,6 @@
 <header class="top" id="top">
   <h1>Aninda Roy Dhruba</h1>
   <p class="role">Lecturer, Dept. of CSE, Northern University Bangladesh. CUET grad. I mostly think about how machines misread language, and how to teach that clearly to a room of undergrads at 9am.</p>
-  <div class="aside-note">
-    yes, I built<br>this site myself
-    <svg width="70" height="24" viewBox="0 0 70 24" fill="none"><path d="M2 4C20 22 40 2 68 18" stroke="#D65A34" stroke-width="2" stroke-linecap="round"/></svg>
-  </div>
 </header>
 
 <div class="wrap layout">
@@ -440,22 +424,18 @@
       <h2>Aninda Roy Dhruba</h2>
       <div class="dept">Dept. of CSE · Northern University Bangladesh</div>
       <ul>
-        <li><a href="mailto:anindaroydhruv@gmail.com">anindaroydhruv@gmail.com</a></li>
-        <li><a href="tel:+8801646517113">+880 1646-517113</a></li>
-        <li><a href="https://github.com/D-R0Y" target="_blank" rel="noopener">github.com/D-R0Y</a></li>
-        <li>Chittagong, Bangladesh</li>
+        <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg><a href="https://scholar.google.com/citations?user=kiLhyQgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><a href="https://github.com/D-R0Y" target="_blank" rel="noopener">github.com/D-R0Y</a></li>
+        <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Chittagong, Bangladesh</span></li>
       </ul>
     </div>
 
-    <a class="btn-cv" href="assets/Aninda_Roy_Dhruba_CV.pdf" download>Download my CV</a>
+    <a class="btn-cv" href="assets/Aninda_Roy_Dhruba_CV.pdf" target="_blank" rel="noopener">View my CV</a>
 
     <div class="pin-note">
-      <strong>Quick facts</strong>
-      Loves Travelling
-      Fav color: black
-      Fav food : Biriani
-      
-    </div
+      <strong>Open to</strong>
+      PhD opportunities and research collaborations in NLP and healthcare AI. Email is the fastest way to reach me.
+    </div>
   </aside>
 
   <!-- MAIN -->
@@ -464,7 +444,7 @@
     <section class="section" id="about">
       <h2>About</h2>
       <p class="lede">I finished my undergrad in Computer Science and Engineering at CUET in August 2025, and a few weeks later I was standing in front of a classroom as a Lecturer at Northern University Bangladesh — which is a faster turnaround than I expected, and I'm still getting used to being called "Sir" by people roughly my own age.</p>
-      <p style="margin-top:.9rem; max-width:640px;">Most of what I care about research-wise sits somewhere between NLP and medicine — right now that means hierarchical disease classification from patient conversations, and separately, trying to understand how bias creeps into language models and what, if anything, we can actually do about it. Neither project is finished. Both are currently sitting in review queues, which is its own kind of patience exercise.</p>
+      <p style="margin-top:.9rem; max-width:640px;">Most of what I care about research-wise sits somewhere between NLP and medicine — right now that means hierarchical disease classification from patient conversations, and separately, trying to understand how bias creeps into language models and what, if anything, we can actually do about it. Both of those papers are now published.</p>
     </section>
 
     <section class="section" id="education">
@@ -475,7 +455,7 @@
             <h3>B.Sc. in Computer Science &amp; Engineering</h3>
             <div class="where">Chittagong University of Engineering and Technology (CUET)</div>
           </div>
-          <div class="num">2021 – Aug 2025 · CGPA 3.89/4.00</div>
+          <div class="num">Feb 2020 – Aug 2025 · CGPA 3.89/4.00</div>
         </div>
         <div class="t-row">
           <div class="what">
@@ -492,7 +472,6 @@
           <div class="num">Apr 2017 · GPA 5.00/5.00</div>
         </div>
       </div>
-      <p class="t-note">Made the Dean's List for keeping CGPA above 3.75. Coursework that's actually stuck with me: Compiler Design, Data Structures &amp; Algorithms, Machine Learning, Database Systems, High Performance Computing — the rest I've had to relearn on the job, which is, I've realized, how it goes for most people.</p>
     </section>
 
     <section class="section" id="experience">
@@ -502,7 +481,7 @@
         <h3>Lecturer</h3>
         <div class="meta">Dept. of CSE, Northern University Bangladesh · Aug 2025 – Present</div>
         <ul>
-          <li>Teach Data Structures, OOP with Java, Computer Networks, Microprocessor &amp; Assembly Language Programming, and System Analysis &amp; Design</li>
+          <li>Teach Data Structures, OOP with Java, Computer Networks, Microprocessor &amp; Assembly Language Programming, and System Analysis &amp; Design, Artificial Intelligence, Structured Programming Language</li>
           <li>Write my own course material and exams instead of recycling old slide decks, which takes longer but I think is worth it</li>
           <li>Advise a handful of students on their own projects and early research attempts</li>
         </ul>
@@ -528,19 +507,19 @@
           <li>Built a dataset of patient conversations covering 16 diseases across 4 medical specializations, mostly by hand at first</li>
           <li>Designed a hierarchical classifier with a custom loss function, then fine-tuned domain-specific transformer models on top of it</li>
         </ul>
-        <span class="status">Submitted to ICCIT, still waiting to hear back</span>
-        <a class="dl" href="papers/hierarchical-disease-classification.pdf" download>— read the manuscript</a>
+        <span class="status">Published at ICCIT</span>
+        <a class="dl" href="papers/hierarchical-disease-classification.pdf" download>— read the paper</a>
       </div>
 
       <div class="paper">
         <h3>Bias Detection &amp; Mitigation in NLP</h3>
-        <div class="meta">Research Associate, Learnify Research Lab · May 2025 – Present</div>
+        <div class="meta">Research Associate, Learnify Research Lab · May 2025 – Feb 2026</div>
         <ul>
           <li>Working through 17 distinct categories of bias that show up in NLP systems — more than I expected going in</li>
           <li>Writing a comparative survey of the detection and mitigation methods people are actually using, versus what's just cited a lot</li>
         </ul>
-        <span class="status">Submitted to Elsevier's Array journal, under review</span>
-        <a class="dl" href="papers/bias-nlp-survey.pdf" download>— read the manuscript</a>
+        <span class="status">Published in Elsevier's Array journal</span>
+        <a class="dl" href="papers/bias-nlp-survey.pdf" download>— read the paper</a>
       </div>
 
       <div class="paper">
@@ -625,9 +604,9 @@
       <div class="now-box">
         <p>What's actually on my desk this month:</p>
         <ul>
-          <li>Prepping lecture material for the new semester at NUB</li>
-          <li>Waiting on reviewer comments from ICCIT and Elsevier's Array — refreshing my inbox more than I'd like to admit</li>
-          <li>Slowly rewriting this site's copy every time I reread it and cringe a little</li>
+          <li>Preparing all the documents for my PhD applications</li>
+          <li>Participating in a 2nd Bangla NLP shared task</li>
+          <li>Working on three research projects related to healthcare and the intersection of AI</li>
         </ul>
       </div>
     </section>
@@ -640,10 +619,9 @@
     <p class="links">
       <a href="mailto:anindaroydhruv@gmail.com">Email me</a>
       <a href="https://github.com/D-R0Y" target="_blank" rel="noopener">GitHub</a>
-      <a href="assets/Aninda_Roy_Dhruba_CV.pdf" download>CV</a>
+      <a href="assets/Aninda_Roy_Dhruba_CV.pdf" target="_blank" rel="noopener">CV</a>
       <a href="#top">Back to top</a>
     </p>
-    <p>This page is hand-written HTML and CSS — no framework, mostly out of stubbornness. If something looks broken on your browser, it's probably my fault; email me and I'll get to it eventually.</p>
   </div>
 </footer>
 
